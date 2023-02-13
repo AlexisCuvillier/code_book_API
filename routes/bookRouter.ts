@@ -1,5 +1,5 @@
-const { Router } = require("express")
-const controllerTemplate = require("../controllers/templateController")
+import {Router } from 'express'
+import bookController from '../controllers/bookController';
 
 
 const router = Router();
@@ -9,27 +9,27 @@ const router = Router();
 /**
  * @swagger
  * tags:
- *      name: Templates
- *      description: Manage template
+ *      name: Books
+ *      description: Manage book
  */
 
 /**
  * @openapi
- * /api/templates:
+ * /api/book:
  *   get:
- *      tags: [Templates]
+ *      tags: [Books]
  *      description: Welcome to swagger-jsdoc!
  *      responses:
  *        200:
  *          description: Returns a mysterious string.
  */
-router.get('/', controllerTemplate.getTemplate)
+router.get('/', bookController.getBook)
 /**
   * @openapi
-  * /api/templates/{id}:
+  * /api/book/{id}:
   *  get:
-  *      tags: [Templates]
-  *      description: Get an template by id
+  *      tags: [Books]
+  *      description: Get an book by id
   *      parameters:
   *       - name: id
   *         in: path
@@ -40,13 +40,13 @@ router.get('/', controllerTemplate.getTemplate)
   *        200:
   *          description: Returns a mysterious string.
   */
-router.get('/:id', controllerTemplate.getTemplateById)
+router.get('/:id', bookController.getBookById)
 /**
   * @openapi
-  * /api/templates:
+  * /api/book:
   *  post:
-  *      tags: [Templates]
-  *      description: Add an template
+  *      tags: [Books]
+  *      description: Add an book
   *      consumes:
   *       - application/json
   *      parameters:
@@ -54,18 +54,18 @@ router.get('/:id', controllerTemplate.getTemplateById)
   *         in: body
   *         required: true
   *         type: object
-  *         default: {"name": "Template","mail": "Template@gmail.com","description": "Template","image": "https://picsum.photos/200/300"}
+  *         default: { "title":"TestUpdate", "author": "Aucun", "available": "false","self_service_id": "cd2df542-a957"}
   *      responses:
   *        200:
   *          description: Returns a mysterious string.
   */
-router.post('/', controllerTemplate.addTemplate)
+router.post('/', bookController.addBook)
 /**
   * @openapi
-  * /api/templates/{id}:
+  * /api/book/{id}:
   *  put:
-  *      tags: [Templates]
-  *      description: Update an template
+  *      tags: [Books]
+  *      description: Update an book
   *      consumes:
   *       - application/json
   *      parameters:
@@ -78,18 +78,18 @@ router.post('/', controllerTemplate.addTemplate)
   *         in: body
   *         required: true
   *         type: object
-  *         default: {"name": "Template","mail": "Template@gmail.com","description": "Template","image": "https://picsum.photos/200/300"}
+  *         default: { "title":"TestUpdate", "author": "Aucun", "available": "false","self_service_id": "cd2df542-a957"}
   *      responses:
   *        200:
   *          description: Returns a mysterious string.
   */
-router.put('/:id', controllerTemplate.updateTemplate)
+router.put('/:id', bookController.updateBook)
 /**
   * @openapi
-  * /api/templates/{id}:
+  * /api/book/{id}:
   *  delete:
-  *      tags: [Templates]
-  *      description: Delete an template
+  *      tags: [Books]
+  *      description: Delete an book
   *      parameters:
   *       - name: id
   *         in: path
@@ -99,7 +99,7 @@ router.put('/:id', controllerTemplate.updateTemplate)
   *        200:
   *          description: Returns a mysterious string. 
   */
-router.delete('/:id', controllerTemplate.deleteTemplate)
+router.delete('/:id', bookController.deleteBook)
 
-module.exports = router
+export default router
 
