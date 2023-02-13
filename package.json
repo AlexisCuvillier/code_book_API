@@ -10,7 +10,7 @@
   },
   "scripts": {
     "dev": "nodemon server.ts",
-    "build": "tsc --project ./",
+    "build": "tsup server.ts --format cjs --clean",
     "start": "node build/server.js",
     "test": ""
   },
