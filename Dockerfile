@@ -3,8 +3,8 @@
 FROM node:18-alpine
 
 #
-ADD . /dist/
-WORKDIR /dist
+ADD . /app/
+WORKDIR /app
 
 #
 RUN touch .env
