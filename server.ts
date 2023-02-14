@@ -12,9 +12,9 @@ const swaggerUi = require('swagger-ui-express')
 
 
 const app = express()
-app.use(cors())
 
 app.use(express.json())
+app.use(cors())
 // createData()
 
 const port = process.env.PORT || 5000
