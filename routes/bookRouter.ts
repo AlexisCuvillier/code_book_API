@@ -62,14 +62,14 @@ router.get('/:id', bookController.getBookById)
 router.post('/', bookController.addBook)
 /**
   * @openapi
-  * /api/book/{id}:
+  * /api/book/{title}:
   *  put:
   *      tags: [Books]
   *      description: Update an book
   *      consumes:
   *       - application/json
   *      parameters:
-  *       - name: id
+  *       - name: title
   *         in: path
   *         required: true
   *         type: string
@@ -83,15 +83,15 @@ router.post('/', bookController.addBook)
   *        200:
   *          description: Returns a mysterious string.
   */
-router.put('/:id', bookController.updateBook)
+router.put('/:title', bookController.updateBook)
 /**
   * @openapi
-  * /api/book/{id}:
+  * /api/book/{title}:
   *  delete:
   *      tags: [Books]
   *      description: Delete an book
   *      parameters:
-  *       - name: id
+  *       - name: title
   *         in: path
   *         required: true
   *         type: string
@@ -99,7 +99,7 @@ router.put('/:id', bookController.updateBook)
   *        200:
   *          description: Returns a mysterious string. 
   */
-router.delete('/:id', bookController.deleteBook)
+router.delete('/:title', bookController.deleteBook)
 
 export default router
 
