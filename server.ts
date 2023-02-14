@@ -1,5 +1,6 @@
 import cors from 'cors'
 import express from 'express'
+import loginRouter from './routes/loginRouter'
 import bookRouter from "./routes/bookRouter"
 
 import "dotenv/config";
@@ -39,3 +40,4 @@ const swaggerOptions = {
 const swaggerDocs = swaggerJsDoc(swaggerOptions)
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use("/api/book", bookRouter)
+app.use('/api/login', loginRouter)

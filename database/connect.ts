@@ -1,4 +1,5 @@
 import mongoose from 'mongoose'
+import { modelBook } from '../models/modelBook';
 
 
 
@@ -6,14 +7,14 @@ mongoose.set('strictQuery', false)
 mongoose.connect(`mongodb+srv://${process.env.DATABASE}`)
     .then(() => console.log('COOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONect'))
     .catch(error => console.log(error))
-
-
-
-
-// const book = new bookModel ({
-//     title:'20 Milles lieux sous la merde',
-//     author:"Jules Verges",
-//     available:true,
-//     self_service_id:"string",
-// })
-// await book.save()
+    
+    
+export default function createData() {
+    const book = new modelBook ({
+        title:'20 Milles lieux sous la merde',
+        author:"Jules Verges",
+        available:true,
+        self_service_id:"string",
+    })
+    book.save()
+}
