@@ -34,7 +34,7 @@ router.get('/', bookController.getBook)
   *       - name: id
   *         in: path
   *         required: true
-  *         type: integer
+  *         type: string
   *         default: 1
   *      responses:
   *        200:
@@ -72,7 +72,7 @@ router.post('/', bookController.addBook)
   *       - name: id
   *         in: path
   *         required: true
-  *         type: integer
+  *         type: string
   *         default: 1
   *       - name: JSON
   *         in: body
@@ -94,7 +94,7 @@ router.put('/:id', bookController.updateBook)
   *       - name: id
   *         in: path
   *         required: true
-  *         type: integer
+  *         type: string
   *      responses:
   *        200:
   *          description: Returns a mysterious string. 
