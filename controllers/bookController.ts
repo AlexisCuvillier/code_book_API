@@ -1,5 +1,5 @@
 import {  Request, Response } from "express"
-import { modelBook } from '../models/modelBook'
+import { modelBook } from '../models/model'
 
 const getBook = async (req:Request, res: Response) => {
     const result = await modelBook.find({})

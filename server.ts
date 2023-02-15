@@ -6,6 +6,7 @@ import bookRouter from "./routes/bookRouter"
 import "dotenv/config";
 import './database/connect'
 import createData from './database/connect';
+import selfServiceRouter from './routes/selfServiceRouter';
 
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
@@ -43,3 +44,4 @@ const swaggerDocs = swaggerJsDoc(swaggerOptions)
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use("/api/book", bookRouter)
 app.use('/api/login', loginRouter)
+app.use('/api/selfservice', selfServiceRouter)

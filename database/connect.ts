@@ -1,5 +1,5 @@
 import mongoose from 'mongoose'
-import { modelBook } from '../models/modelBook';
+import { modelBook } from '../models/model';
 
 
 
