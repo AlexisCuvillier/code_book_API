@@ -17,6 +17,7 @@ const addBook = async (req :Request, res: Response) => {
 }
 
 const updateBook = async (req :Request, res: Response) => {
+    req.body.user_id == null ? req.body.borrow_date = null : req.body.borrow_date = new Date()
     const result = await modelBook.findOneAndUpdate({title : req.params.title}, req.body)
     res.status(200).json({message : "book Update",result})
 }
