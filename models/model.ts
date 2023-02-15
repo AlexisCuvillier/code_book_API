@@ -2,6 +2,7 @@ import mongoose from 'mongoose'
 
 const self_service_schema = new mongoose.Schema(
     {
+        _id: mongoose.Schema.Types.ObjectId,
         location: String,
         address :  String,
         zip_code : Number,
@@ -15,7 +16,7 @@ const schemaBook = new mongoose.Schema({
     author: String,
     available: Boolean,
     borrow_date: Date,
-    self_service_id: String,
+    self_service_id: [{self_service_schema}],
     user_id: String
 });
 

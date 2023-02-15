@@ -23,7 +23,7 @@ const updateBook = async (req :Request, res: Response) => {
 
 
 const deleteBook = async (req :Request, res: Response) => {
-    const result = await modelBook.deleteOne({title : req.params.title})
+    const result = await modelBook.deleteOne({id : req.params._id})
     res.status(200).json({message : "Book ad",result})
 }
 export default {

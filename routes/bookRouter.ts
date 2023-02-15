@@ -54,7 +54,7 @@ router.get('/:id', bookController.getBookById)
   *         in: body
   *         required: true
   *         type: object
-  *         default: { "title":"TestUpdate", "author": "Aucun", "available": "false","self_service_id": "cd2df542-a957"}
+  *         default: { "title":"TestUpdate", "author": "Aucun", "available": "false","self_service_id": "cd2df542-a957", user_id: null, borrow_date: null}
   *      responses:
   *        200:
   *          description: Returns a mysterious string.
@@ -78,7 +78,7 @@ router.post('/', bookController.addBook)
   *         in: body
   *         required: true
   *         type: object
-  *         default: { "title":"TestUpdate", "author": "Aucun", "available": "false","self_service_id": "cd2df542-a957"}
+  *         default:  { "title":"TestUpdate", "author": "Aucun", "available": "false","self_service_id": "cd2df542-a957", user_id: null, borrow_date: null}
   *      responses:
   *        200:
   *          description: Returns a mysterious string.
@@ -86,12 +86,12 @@ router.post('/', bookController.addBook)
 router.put('/:title', bookController.updateBook)
 /**
   * @openapi
-  * /api/book/{title}:
+  * /api/book/{id}:
   *  delete:
   *      tags: [Books]
   *      description: Delete an book
   *      parameters:
-  *       - name: title
+  *       - name: id
   *         in: path
   *         required: true
   *         type: string
@@ -99,7 +99,7 @@ router.put('/:title', bookController.updateBook)
   *        200:
   *          description: Returns a mysterious string. 
   */
-router.delete('/:title', bookController.deleteBook)
+router.delete('/:id', bookController.deleteBook)
 
 export default router
 
