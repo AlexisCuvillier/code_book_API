@@ -2,7 +2,7 @@ import {  Request, Response } from "express"
 import { modelBook } from '../models/model'
 
 const getBook = async (req:Request, res: Response) => {
-    const result = await modelBook.find({})
+    const result = await modelBook.find({}).populate('self_service_id')
     res.status(200).json({message : "allBook",result})
 }
 
@@ -17,11 +17,19 @@ const addBook = async (req :Request, res: Response) => {
 }
 
 const updateBook = async (req :Request, res: Response) => {
-    req.body.user_id == null ? req.body.borrow_date = null : req.body.borrow_date = new Date() 
-    req.body.user_id !== null ? req.body.available == false : req.body.available = true
     const result = await modelBook.findOneAndUpdate({title : req.params.title}, req.body)
     res.status(200).json({message : "book Update",result})
 }
+
+
+const borrowBook = async (req :Request, res: Response) => {
+    req.body.user_id == null ? req.body.borrow_date = null : req.body.borrow_date = new Date() 
+    req.body.user_id == null ? req.body.available == true : req.body.available = false
+    const result = await modelBook.findOneAndUpdate({title : req.params.title}, req.body)
+    res.status(200).json({message : "book Update",result})
+}
+
+
 
 
 const deleteBook = async (req :Request, res: Response) => {
@@ -33,5 +41,6 @@ export default {
     getBookById,
     addBook,
     updateBook,
-    deleteBook
+    deleteBook, 
+    borrowBook
 }

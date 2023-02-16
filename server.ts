@@ -8,6 +8,7 @@ import './database/connect'
 import createData from './database/connect';
 import selfServiceRouter from './routes/selfServiceRouter';
 
+
 const swaggerJsDoc = require('swagger-jsdoc')
 const swaggerUi = require('swagger-ui-express')
 
@@ -17,6 +18,7 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 // createData()
+
 
 const port = process.env.PORT || 5000
 app.listen(port, () => {
