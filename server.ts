@@ -7,6 +7,8 @@ import "dotenv/config";
 import './database/connect'
 import createData from './database/connect';
 import selfServiceRouter from './routes/selfServiceRouter';
+import borrowRouter from './routes/borrowRouter';
+import renderRouter from './routes/renderRouter';
 
 
 const swaggerJsDoc = require('swagger-jsdoc')
@@ -43,7 +45,10 @@ const swaggerOptions = {
 }
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions)
+
 app.use('/api/docs', swaggerUi.serve, swaggerUi.setup(swaggerDocs))
 app.use("/api/book", bookRouter)
 app.use('/api/login', loginRouter)
 app.use('/api/selfservice', selfServiceRouter)
+app.use('/api/borrow', borrowRouter)
+app.use('/api/render', renderRouter)

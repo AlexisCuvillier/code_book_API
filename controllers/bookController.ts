@@ -1,3 +1,4 @@
+
 import {  Request, Response } from "express"
 import { modelBook } from '../models/model'
 
@@ -22,16 +23,6 @@ const updateBook = async (req :Request, res: Response) => {
 }
 
 
-const borrowBook = async (req :Request, res: Response) => {
-    req.body.user_id == null ? req.body.borrow_date = null : req.body.borrow_date = new Date() 
-    req.body.user_id == null ? req.body.available == true : req.body.available = false
-    const result = await modelBook.findOneAndUpdate({title : req.params.title}, req.body)
-    res.status(200).json({message : "book Update",result})
-}
-
-
-
-
 const deleteBook = async (req :Request, res: Response) => {
     const result = await modelBook.deleteOne({id : req.params._id})
     res.status(200).json({message : "Book ad",result})
@@ -41,6 +32,5 @@ export default {
     getBookById,
     addBook,
     updateBook,
-    deleteBook, 
-    borrowBook
+    deleteBook
 }

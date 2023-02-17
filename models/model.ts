@@ -9,18 +9,18 @@ import { Document, model, Schema } from 'mongoose';
 //     }
 // );
 
-// export const modelSelfService = mongoose.model("selfService", self_service_schema, 'selfservice')
+// export const modelSelfService = mongoose.model("selfService", self_service_schema )
 
 // const schemaBook = new mongoose.Schema({
 //     title: String,
 //     author: String,
 //     available: Boolean,
-//     borrow_date: Date,
+//     borrow_date: {type: Schema.Types.Mixed },
 //     self_service_id: {type: mongoose.Schema.Types.ObjectId, ref: "selfservice"},
-//     user_id: String
+//     user_id: {type: Schema.Types.Mixed }
 // });
 
-// export const modelBook = mongoose.model("Book", schemaBook, "book");
+// export const modelBook = mongoose.model("Book", schemaBook);
 
 
 export type TBook = {
@@ -48,9 +48,9 @@ const schemaBook = new Schema({
     title: {type: String},
     author: {type:String},
     available: {type:Boolean},
-    borrow_date: {type:Date},
+    borrow_date: {type: Schema.Types.Mixed },
     self_service_id: {type: Schema.Types.ObjectId, ref: "selfservice"},
-    user_id: {type:String}
+    user_id: {type: Schema.Types.Mixed }
 })
 
 
@@ -61,6 +61,6 @@ const schemaSelfPoint = new Schema ({
 })
 
 
-export const modelBook = model<IBook>('book',schemaBook)
+export const modelBook = model('book',schemaBook)
 
-export const modelSelfService = model<ISelfPointService>('selfservice',schemaSelfPoint)
+export const modelSelfService = model('selfservice',schemaSelfPoint)
