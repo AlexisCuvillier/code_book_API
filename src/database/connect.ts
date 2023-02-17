@@ -1,15 +1,25 @@
 import mongoose from 'mongoose'
-import { modelBook, modelSelfService } from '../models/model';
+import { modelBook, modelSelfService } from '../models/model'
+import * as dotenv from 'dotenv'
+
+dotenv.config({path: `./.env.${process.env.NODE_ENV}`})
+
+const url = `mongodb+srv://${process.env.DATABASE}`
 
 
 
-mongoose.set('strictQuery', false)
-mongoose.connect(`mongodb+srv://${process.env.DATABASE}`)
+export const connectDb = async () => {
+    console.log(url);
+    
+    mongoose.set('strictQuery', false)
+    mongoose.connect(url)
     .then(() => console.log('COOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOOONect'))
     .catch(error => console.log(error))
-    
-    
-export default function createData() {
+}
+
+
+
+export const createData = () => {
     const book = new modelBook ({
         title:'20 Milles lieux sous la merde',
         author:"Jules Verges",
