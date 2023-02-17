@@ -33,12 +33,12 @@ const swaggerOptions = {
                 name: 'Jules verges'
             },
             servers: [{
-                url:`http://localhost:5000`,
+                url:`http://localhost:5009`,
                 description: 'localhost'
             },],
         },
     },
-    apis: [`./routes/*.ts`]
+    apis: [`./src/routes/*.ts`]
 }
 
 const swaggerDocs = swaggerJsDoc(swaggerOptions)
