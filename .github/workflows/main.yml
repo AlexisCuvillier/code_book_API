@@ -36,4 +36,4 @@ jobs:
                       docker stop book_code
                       docker rm book_code
                       docker rmi ${{ secrets.DOCKERHUB_USERNAME}}/book_code:latest
-                      docker run -d --name="book_code" -p 5009:5009  --env-file .env.dev  ${{ secrets.DOCKERHUB_USERNAME}}/book_code:latest
+                      docker run -d --name="book_code" -p 5009:5009  -e "DATABASE=${{ secrets.DATABASE}}"  -e "PORT=${{ secrets.PORT}}" ${{ secrets.DOCKERHUB_USERNAME}}/book_code:latest
