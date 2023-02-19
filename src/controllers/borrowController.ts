@@ -35,6 +35,7 @@ const borrowBook = async (req: Request, res: Response) => {
             borrow.user_id = data.user_id
             borrow.borrow_date = new Date()
             borrow.available = false
+            borrow.self_service_id = undefined
             borrow.save()
             res.status(200).json({message: 'Book borrowed', borrow})
         break;

@@ -19,7 +19,7 @@ const renderBook = async (req :Request, res: Response) => {
             render.user_id = null
             render.borrow_date = null
             render.available = true
-            render.self_service_id = req.body
+            render.self_service_id = req.body.self_service_id
             render.save()
             res.status(200).json({message: 'Book returned', render})
         break;

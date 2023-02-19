@@ -23,25 +23,25 @@ import { Document, model, Schema } from 'mongoose';
 // export const modelBook = mongoose.model("Book", schemaBook);
 
 
-// export type TBook = {
-//     title: string,
-//     author: string,
-//     available: boolean,
-//     borrow_date: Date,
-//     self_service_id: string,
-//     user_id: string
-// }
+export type TBook = {
+    title: string,
+    author: string,
+    available: boolean,
+    borrow_date: Date,
+    self_service_id: string,
+    user_id: string
+}
 
-// export type TSelfPointService = {
-//         location: string,
-//         address :  string,
-//         zip_code : number,
-// }
+export type TSelfPointService = {
+        location: string,
+        address :  string,
+        zip_code : number,
+}
 
 
-// export interface IBook extends TBook , Document{};
+export interface IBook extends TBook , Document{};
 
-// export interface ISelfPointService extends TSelfPointService,Document{};
+export interface ISelfPointService extends TSelfPointService,Document{};
 
 
 const schemaBook = new Schema({

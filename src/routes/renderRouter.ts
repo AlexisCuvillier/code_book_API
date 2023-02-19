@@ -30,7 +30,7 @@ const router = Router();
   *         in: body
   *         required: true
   *         type: object
-  *         default:  { "title":"TestUpdate", "author": "Aucun", "available": "false","self_service_id": "cd2df542-a957", user_id: null, borrow_date: null}
+  *         default:  { "self_service_id": "cd2df542-a957"}
   *      responses:
   *        200:
   *          description: Returns a mysterious string.

@@ -9,7 +9,7 @@ const url = `mongodb+srv://${process.env.DATABASE}`
 
 
 export const connectDb = async () => {
-    console.log(url);
+   
     
     mongoose.set('strictQuery', false)
     mongoose.connect(url)
