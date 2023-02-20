@@ -33,7 +33,7 @@ const swaggerOptions = {
                 name: 'Jules verges'
             },
             servers: [{
-                url:`http://localhost:5009`,
+                url:`http://alexis-cuvillier.online:5009`,
                 description: 'localhost'
             },],
         },
