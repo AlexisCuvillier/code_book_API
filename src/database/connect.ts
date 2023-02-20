@@ -2,7 +2,8 @@ import mongoose from 'mongoose'
 import { modelBook, modelSelfService } from '../models/model'
 import * as dotenv from 'dotenv'
 
-dotenv.config({path: `./.env.${process.env.NODE_ENV}`})
+// dotenv.config({path: `./.env.${process.env.NODE_ENV}`})
+dotenv.config()
 
 const url = `mongodb+srv://${process.env.DATABASE}`
 
