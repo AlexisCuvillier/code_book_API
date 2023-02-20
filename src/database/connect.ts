@@ -26,8 +26,8 @@ export const createData = () => {
         author:"Jules Verges",
         available:true,
         self_service_id:null,
-        borrow_date:null,
-        user_id: null
+        borrow_date:new Date(-35),
+        user_id: "34RNJ3D"
     })
     book.save()
 
