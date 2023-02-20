@@ -7,7 +7,7 @@ import './src/database/connect'
 import selfServiceRouter from './src/routes/selfServiceRouter';
 import borrowRouter from './src/routes/borrowRouter';
 import renderRouter from './src/routes/renderRouter';
-import { connectDb } from './src/database/connect';
+import { createData } from './src/database/connect';
 
 
 const swaggerJsDoc = require('swagger-jsdoc')
