@@ -7,13 +7,15 @@
     "@types/node": "^18.7.21",
     "@types/node-cron": "^3.0.7",
     "@types/supertest": "^2.0.12",
+    "@types/swagger-jsdoc": "^6.0.1",
+    "@types/swagger-ui-express": "^4.1.3",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.1.0",
     "tsup": "^6.2.3",
     "typescript": "^4.8.3"
   },
   "scripts": {
-    "dev": "nodemon server.ts",
+    "dev": "NODE_ENV=dev nodemon server.ts",
     "build": "tsup server.ts --format cjs --clean",
     "start": "node dist/server.js",
     "test-inte": "NODE_ENV=test jest --detectOpenHandles --testTimeout=5000 --config=jest.inte.config.json"

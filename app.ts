@@ -8,22 +8,21 @@ import selfServiceRouter from "./src/routes/selfServiceRouter";
 import borrowRouter from "./src/routes/borrowRouter";
 import renderRouter from "./src/routes/renderRouter";
 import cron from "node-cron";
-import { modelBook } from "./src/models/model";
 import axios from "axios";
+import swaggerJsDoc from "swagger-jsdoc";
+import swaggerUi, { SwaggerOptions } from "swagger-ui-express";
+import { modelBook } from "./src/models/model";
 import { createData } from './src/database/connect';
-
-const swaggerJsDoc = require("swagger-jsdoc");
-const swaggerUi = require("swagger-ui-express");
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-createData()
+// createData()
 // dotenv.config({path: `./.env.${process.env.NODE_ENV}`})
 dotenv.config();
 
-const swaggerOptions = {
+const swaggerOptions : SwaggerOptions = {
     swaggerDefinition: {
         info: {
             title: "Books API",

@@ -33,7 +33,7 @@ export const createData = () => {
 
     const selfService = new modelSelfService ({
         location: 'Boulogne-sur-mer',
-        address: "33 rue de la poupée qaui tousse",
+        address: "33 rue de la poupée qui tousse",
         zip_code:62200
     })
 
