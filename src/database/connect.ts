@@ -22,8 +22,8 @@ export const connectDb = async () => {
 
 export const createData = () => {
     const book = new modelBook ({
-        title:'20 Milles lieux sous la merde',
-        author:"Jules Verges",
+        title:'20 Milles lieux sous la mer',
+        author:"Jules Vernes",
         available:true,
         self_service_id:null,
         borrow_date:new Date(-35),
